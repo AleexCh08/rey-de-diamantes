@@ -47,9 +47,19 @@ export default function App() {
     }
   }, [currentView]);
 
+  const enforceFullscreen = () => {
+    if (document.documentElement.requestFullscreen && !document.fullscreenElement) {
+      document.documentElement.requestFullscreen().catch(() => {
+      });
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-black flex justify-center items-center overflow-hidden font-sans text-gray-100 selection:bg-red-500/30 select-none touch-manipulation">
-      <div className="w-full h-dvh max-w-md bg-gray-950 sm:shadow-2xl sm:shadow-red-900/10 sm:border sm:border-gray-800 relative flex flex-col sm:h-[85vh] sm:rounded-3xl overflow-hidden">
+    <div 
+      onClick={enforceFullscreen} 
+      className="fixed inset-0 bg-black flex justify-center items-center overflow-hidden font-sans text-gray-100 selection:bg-red-500/30 select-none touch-manipulation pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)]"
+    >
+      <div className="w-full h-full max-w-md bg-gray-950 sm:shadow-2xl sm:shadow-red-900/10 sm:border sm:border-gray-800 relative flex flex-col sm:h-[85vh] sm:rounded-3xl overflow-hidden">
            
         <header className="p-4 border-b border-red-900/30 bg-gray-900 flex justify-center items-center shadow-md relative z-10 shrink-0">
           <h1 className="text-xl font-black tracking-widest text-red-600 uppercase drop-shadow-md flex items-center gap-2">
