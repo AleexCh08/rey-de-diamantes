@@ -49,7 +49,7 @@ export const Menu = ({
   };
 
   return (
-    <div className="flex flex-col h-dvh w-full p-5 gap-y-6">
+    <div className="flex flex-col h-full w-full p-5 gap-y-6">
 
       <button 
         onClick={() => setIsSettingsOpen(true)}

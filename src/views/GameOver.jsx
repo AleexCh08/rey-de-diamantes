@@ -20,7 +20,7 @@ export const GameOver = ({ players, setCurrentView }) => {
   const rainCards = Array.from({ length: 6 });
 
   return (
-    <div className="flex flex-col h-dvh w-full p-4 items-center justify-center text-center relative z-10 overflow-hidden gap-y-6">
+    <div className="flex flex-col h-full w-full p-4 items-center justify-center text-center relative z-10 overflow-hidden gap-y-6">
 
       <motion.div 
         initial={{ opacity: 0 }}

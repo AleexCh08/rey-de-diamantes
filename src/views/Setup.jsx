@@ -51,7 +51,7 @@ export const Setup = ({ playerNames, handleNameChange, isFormValid, startGame, s
   };
 
   return (
-    <div className="flex flex-col h-dvh w-full p-4 justify-center gap-y-8 relative animate-fade-in overflow-hidden">
+    <div className="flex flex-col h-full w-full p-4 justify-center gap-y-8 relative animate-fade-in overflow-hidden">
       
       <motion.h2 
         initial={{ opacity: 0, y: -10 }}

@@ -156,7 +156,7 @@ export const Turn = ({ currentPlayer, currentInput, setCurrentInput, confirmSele
   const padKeys = ['1', '2', '3', '4', '5', '6', '7', '8', '9', 'C', '0', 'DEL'];
 
   return (
-    <div className="flex flex-col h-dvh w-full p-4 relative overflow-hidden justify-center gap-y-4">
+    <div className="flex flex-col h-full w-full p-4 relative overflow-hidden justify-center gap-y-4">
       
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 2px, #fff 2px, #fff 4px)' }} />
 

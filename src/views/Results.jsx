@@ -103,7 +103,7 @@ export const Results = ({ roundStats, players, startNextRound, setCurrentView })
   }
 
   return (
-    <div className="flex flex-col h-dvh w-full p-4 relative overflow-hidden justify-center gap-y-2">
+    <div className="flex flex-col h-full w-full p-4 relative overflow-hidden justify-center gap-y-2">
       <button
         onClick={() => {
           setIsExitModalOpen(true);
@@ -115,7 +115,7 @@ export const Results = ({ roundStats, players, startNextRound, setCurrentView })
     
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 2px, #fff 2px, #fff 4px)' }} />
 
-      <div className="flex flex-col items-center w-70 shrink-0 z-10 gap-3 self-center">
+      <div className="flex flex-col items-center w-full max-w-70 shrink-0 z-10 gap-1.5 sm:gap-3 self-center">
                
         <motion.div 
           initial={{ opacity: 0, y: -10 }}
@@ -131,7 +131,7 @@ export const Results = ({ roundStats, players, startNextRound, setCurrentView })
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ type: "spring", bounce: 0.5, duration: 0.8 }}
-          className="relative bg-gray-900 border-2 border-red-900/50 rounded-xl px-12 py-4 text-center shadow-[0_0_20px_rgba(0,0,0,0.6),inset_0_0_15px_rgba(220,38,38,0.05)] self-center w-full max-w-xs"
+          className="relative bg-gray-900 border-2 border-red-900/50 rounded-xl px-8 py-2 sm:py-4 text-center shadow-[0_0_20px_rgba(0,0,0,0.6),inset_0_0_15px_rgba(220,38,38,0.05)] self-center w-full max-w-xs"
         >
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-1.5 bg-red-500 rounded-b-md shadow-[0_0_8px_rgba(239,68,68,0.8)]" />
           <div className="absolute top-2 left-2 w-2 h-2 border-t-2 border-l-2 border-red-500/50" />
@@ -141,7 +141,7 @@ export const Results = ({ roundStats, players, startNextRound, setCurrentView })
             Objetivo
           </span>
           
-          <span className="text-6xl font-black text-white drop-shadow-[0_0_20px_rgba(220,38,38,0.9)] leading-none block">
+          <span className="text-5xl sm:text-6xl font-black text-white drop-shadow-[0_0_20px_rgba(220,38,38,0.9)] leading-none block">
             {displayTarget}
           </span>
 
@@ -152,7 +152,7 @@ export const Results = ({ roundStats, players, startNextRound, setCurrentView })
         variants={containerVariants}
         initial="hidden"
         animate="show"
-        className="flex flex-col justify-center gap-2 z-10 w-full shrink-0"
+        className="flex flex-col justify-center gap-1.5 sm:gap-2 z-10 w-full flex-1 min-h-0"
       >
         {sortedPlayers.map(p => {
           const isJustEliminated = roundStats.newlyEliminated.some(ne => ne.id === p.id);
@@ -163,7 +163,7 @@ export const Results = ({ roundStats, players, startNextRound, setCurrentView })
               <motion.div 
                 variants={itemVariants} 
                 key={p.id} 
-                className="flex items-center justify-between px-4 py-3 rounded-xl bg-gray-900/40 border border-gray-800 opacity-40 shrink-0 shadow-md"
+                className="flex items-center justify-between px-3 py-1.5 sm:py-3 rounded-xl bg-gray-900/40 border border-gray-800 opacity-40 shrink-0 shadow-md"
               >
                 <span className="font-bold text-red-700/80 line-through tracking-widest text-base uppercase">{p.name}</span>
                 <span className="text-red-700/80 font-black tracking-widest uppercase text-xs border border-red-900/30 bg-red-950/20 px-2 py-1 rounded-md">Eliminado</span>
@@ -182,7 +182,7 @@ export const Results = ({ roundStats, players, startNextRound, setCurrentView })
                   ? { backgroundColor: ["#111827", "#064e3b", "#022c22"], transition: { duration: 1, delay: 2.2 } }
                   : { x: [0, -3, 3, -3, 3, 0], transition: { duration: 0.4, delay: 2.2 } }
               }
-              className={`flex items-center px-4 py-3 rounded-xl border-2 relative overflow-hidden shrink-0 shadow-md ${
+              className={`flex items-center px-3 py-1.5 sm:py-3 rounded-xl border-2 relative overflow-hidden shrink-0 shadow-md ${
                 p.isRoundWinner 
                   ? 'bg-emerald-950/40 border-emerald-500 shadow-[inset_0_0_15px_rgba(16,185,129,0.2),0_4px_6px_-1px_rgba(0,0,0,0.4)]' 
                   : 'bg-gray-800/95 border-gray-600 shadow-[0_4px_6px_-1px_rgba(0,0,0,0.4)]'
@@ -269,7 +269,7 @@ export const Results = ({ roundStats, players, startNextRound, setCurrentView })
         })}
       </motion.div>
 
-      <div className="w-70 shrink-0 z-10 pt-2 self-center">
+      <div className="w-full max-w-70 shrink-0 z-10 pt-1 sm:pt-2 self-center">
         <GameButton 
           variant="primary" 
           onClick={startNextRound}
