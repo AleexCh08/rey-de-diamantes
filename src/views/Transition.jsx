@@ -21,7 +21,7 @@ export const Transition = ({ currentPlayer, setCurrentView }) => {
   if (!currentPlayer) return null;
 
   return (
-    <div className="flex flex-col h-dvh w-full p-4 justify-center items-center gap-y-10 relative overflow-hidden">
+    <div className="flex flex-col h-full w-full p-4 justify-center items-center gap-y-10 relative overflow-hidden">
       
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 2px, #fff 2px, #fff 4px)' }} />
       

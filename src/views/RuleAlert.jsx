@@ -36,7 +36,7 @@ export const RuleAlert = ({ players, acknowledgeRule }) => {
   }
 
   return (
-    <div className="flex flex-col h-dvh w-full p-4 justify-center items-center text-center overflow-hidden gap-y-6">
+    <div className="flex flex-col h-full w-full p-4 justify-center items-center text-center overflow-hidden gap-y-6">
       
       <div className="flex flex-col items-center justify-center w-full shrink-0">
         <motion.div 
